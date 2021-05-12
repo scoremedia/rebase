@@ -11,6 +11,11 @@ import {v4 as uuidv4} from 'uuid'
 
 async function run(): Promise<void> {
   try {
+    core.warning(`This action's default branch has been renamed to "main"`)
+    core.warning(
+      `Referencing this action with "@master" is deprecated and will stop working after June 30th 2021`
+    )
+
     const inputs = {
       token: core.getInput('token'),
       repository: core.getInput('repository'),
